@@ -363,10 +363,13 @@ st.markdown('<h1 class="main-header">🚗 Araç Fiyat Tahmin Uygulaması</h1>', 
 st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666;">Makine öğrenmesi ile araç fiyatınızı tahmin edin</p>', unsafe_allow_html=True)
 
 # Navigasyon
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
+col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+with col1:
     if st.button("🔍 Model Açıklanabilirliği", use_container_width=True):
         st.switch_page("pages/explainability_page.py")
+with col2:
+    if st.button("🔍 Exper Online", use_container_width=True):
+        st.switch_page("pages/exper_online.py")
 
 # Model yükleme fonksiyonu
 @st.cache_data
