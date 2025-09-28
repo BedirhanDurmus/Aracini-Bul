@@ -278,7 +278,7 @@ with tab1:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.image(image, caption="Yüklenen Görüntü", use_container_width=True)
+            st.image(image, caption="Yüklenen Görüntü", width='stretch')
         
         # Tespit butonu
         if st.button("🔍 Tespit Yap", type="primary", use_container_width=True):
@@ -302,7 +302,7 @@ with tab1:
                     image_with_detections = draw_detections(image_array, detections)
                     
                     with col2:
-                        st.image(image_with_detections, caption="Tespit Sonuçları", use_container_width=True)
+                        st.image(image_with_detections, caption="Tespit Sonuçları", width='stretch')
                     
                     # Sonuçları indirme
                     result_image = Image.fromarray(cv2.cvtColor(image_with_detections, cv2.COLOR_BGR2RGB))
@@ -364,7 +364,7 @@ with tab2:
                     
                     # Görüntüyü göster
                     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                    frame_placeholder.image(frame_rgb, channels="RGB", use_container_width=True)
+                    frame_placeholder.image(frame_rgb, channels="RGB", width='stretch')
                     
                     # Durdurma kontrolü
                     if stop_button:
